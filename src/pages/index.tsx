@@ -1,8 +1,9 @@
 import Head from "next/head";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -13,9 +14,33 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
+let username = "vicky.js@zestgeek.com";
+let passs = "123456789";
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [changePass, setChangePass] = useState(false);
+  const [newPass, setNewPass] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
+
+  const handleField = () => {
+    if (email === username && pass === passs) {
+      setChangePass(true);
+    } else {
+      alert("You are Not Signed");
+    }
+  };
+
+  const handlePassword = () => {
+    if (newPass != confirmPass) {
+      alert("Password is not matching");
+    } else {
+      alert("password is matching");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -27,26 +52,73 @@ export default function Home() {
       <div className="container">
         <div className="login-container">
           <div className="login-field">
-            <h3 className="Login-tag">Login</h3>
             <div className="login-heading">
-              <Image src="/images/logo.svg" width="122" alt="login-logo" />
-              <h1>Login to Your Account</h1>
-            </div>
-            <div className="login-inputs">
-              <input
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter Your Email"
-                value={email}
+              <Image
+                src="/images/logo.svg"
+                width={122}
+                height={100}
+                alt="login-logo"
               />
-              <input
-                onChange={(e) => setPass(e.target.value)}
-                value={pass}
-                type="password"
-                placeholder="******"
-              />
+              {changePass ? (
+                <h1>Change Your Password</h1>
+              ) : (
+                <h1>Login to Your Account</h1>
+              )}
             </div>
-            <Button colorScheme="whatsapp">Login</Button>
+            {changePass ? (
+              <div className="login-inputs">
+                <input
+                  type="password"
+                  onChange={(e) => setNewPass(e.target.value)}
+                  placeholder="Enter Your New Password"
+                  value={newPass}
+                />
+                <input
+                  onChange={(e) => setConfirmPass(e.target.value)}
+                  value={confirmPass}
+                  type="password"
+                  placeholder="Confirm Your Password"
+                />
+                <Button
+                  colorScheme="whatsapp"
+                  onClick={(e) => {
+                    handlePassword();
+                  }}
+                >
+                  Login
+                </Button>
+              </div>
+            ) : (
+              <div className="login-inputs">
+                <input
+                  type="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter Your Email"
+                  value={email}
+                />
+                <input
+                  onChange={(e) => setPass(e.target.value)}
+                  value={pass}
+                  type="password"
+                  placeholder="******"
+                />
+                <Button
+                  colorScheme="whatsapp"
+                  onClick={(e) => {
+                    handleField();
+                  }}
+                >
+                  Login
+                </Button>
+              </div>
+            )}
+
+            {changePass ? (
+              <Link href="/dashboard">
+                {" "}
+                <p>Skip This step</p>{" "}
+              </Link>
+            ) : null}
           </div>
         </div>
         <div className="login_side-img"></div>
