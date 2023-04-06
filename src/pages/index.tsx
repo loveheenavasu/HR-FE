@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
+// import {Button} from '@chakra-ui/react'
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -81,7 +82,7 @@ export default function Home() {
                 />
                 <Button
                   colorScheme="whatsapp"
-                  onClick={(e) => {
+                  onClick={() => {
                     handlePassword();
                   }}
                 >
@@ -116,7 +117,9 @@ export default function Home() {
             {changePass ? (
               <Link href="/dashboard">
                 {" "}
-                <p>Skip This step</p>{" "}
+                <div className="skip-step">
+                  <Button>Skip This step</Button>{" "}
+                </div>
               </Link>
             ) : null}
           </div>

@@ -162,3 +162,15 @@ a {
   background-position: left;
   background-size: cover;
 }
+
+p.skip-step {
+  text-align: end;
+  margin-top: 13px;
+}
+.skip-step button {
+  width: us;
+  width: unset;
+}
+.skip-step {
+  text-align: end;
+}
