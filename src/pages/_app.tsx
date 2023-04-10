@@ -5,26 +5,23 @@ import ChakraTheme from "@chakra-ui/theme";
 import store from "../redux/store";
 import { Provider } from "react-redux";
 import SidebarWithHeader from "@/components/Layout";
+import type { ReactElement, ReactNode } from "react";
 
-type componentWithPageLayout = AppProps & {
-  Component: AppProps["Component"] & {
-    PageLayout?: React.ComponentType;
-  };
+import type { NextPage } from "next";
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
 };
 
-export default function App({ Component, pageProps }: componentWithPageLayout) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <Provider store={store}>
       <ChakraProvider theme={ChakraTheme}>
-        {Component.PageLayout ? (
-          // In react 18 they removed children as a default prop on the FC type.
-          //  @ts-ignore
-          <Component.PageLayout>
-            <Component {...pageProps} />
-          </Component.PageLayout>
-        ) : (
-          <Component {...pageProps} />
-        )}
+        {getLayout(<Component {...pageProps} />)}
       </ChakraProvider>
     </Provider>
   );

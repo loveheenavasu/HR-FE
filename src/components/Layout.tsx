@@ -107,6 +107,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
+      onClose={onClose}
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
@@ -140,8 +141,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           </VStack>
         </Menu>
       </Menu>
-      {LinkItems.map((link) => {
-        const leaveINK = link.name === "Leave" ? "/Leave" : "/dashboard";
+      {LinkItems.map((link, item) => {
         return (
           <Link
             className={Styles.sidebarLinks}
@@ -149,7 +149,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             href={`/${link.name}`}
           >
             {" "}
-            {link.name}
+            <div> {link.name}</div>
           </Link>
         );
       })}

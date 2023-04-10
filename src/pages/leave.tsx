@@ -1,9 +1,13 @@
 import React from "react";
 import SidebarWithHeader from "@/components/Layout";
+import type { ReactElement } from "react";
+import type { NextPageWithLayout } from "./_app";
 
-const Leave = () => {
-  return <h1>Leave</h1>;
+const Leave: NextPageWithLayout = () => {
+  return <p>hello leave</p>;
 };
-Leave.PageLayout = SidebarWithHeader;
+Leave.getLayout = function getLayout(page: ReactElement) {
+  return <SidebarWithHeader>{page}</SidebarWithHeader>;
+};
 
 export default Leave;
