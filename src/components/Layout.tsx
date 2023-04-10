@@ -1,4 +1,12 @@
 import React, { ReactNode } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
+import { memo } from "react";
+import demo from "../../public/images/demo.jpeg";
+import MobileNav from "./header";
+import Styles from "../styles/layout.module.css";
+
 import {
   IconButton,
   Avatar,
@@ -9,7 +17,6 @@ import {
   VStack,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -17,6 +24,7 @@ import {
   BoxProps,
   FlexProps,
   Menu,
+  Button,
   MenuButton,
   MenuDivider,
   MenuItem,
@@ -41,8 +49,8 @@ interface LinkItemProps {
   icon: IconType;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome },
-  { name: "Leave", icon: FiCalendar },
+  { name: "home", icon: FiHome },
+  { name: "leave", icon: FiCalendar },
 ];
 
 export default function SidebarWithHeader({
@@ -51,6 +59,8 @@ export default function SidebarWithHeader({
   children: ReactNode;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef(null);
+
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
       <SidebarContent
@@ -64,17 +74,18 @@ export default function SidebarWithHeader({
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size="half"
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <MobileNav />
+      <Box ml={{ base: 0, md: 60 }} p="5">
         {children}
       </Box>
+      {/* <Link href={`/${link}`}>{children}</Link> */}
     </Box>
   );
 }
@@ -84,6 +95,9 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  // const handleClick = (item:Nav) => {
+
+  // }
   return (
     <Box
       transition="3s ease"
@@ -97,23 +111,24 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          {/* Logo */}
+          <Image
+            src="/images/logo.svg"
+            width={122}
+            height={100}
+            alt="login-logo"
+          />
         </Text>
 
         {/* <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} /> */}
       </Flex>
       <Menu>
-        <Menu py={2} transition="all 0.3s" _focus={{ boxShadow: "none" }}>
+        <Menu>
           <VStack>
-            <Avatar
-              size={"xl"}
-              src={
-                "https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-              }
-            />
+            <Image alt="user-image" width={122} height={100} src={demo} />
             <VStack
               display={{ base: "none", md: "flex" }}
-              alignItems="flex-start"
+              alignItems="center"
               spacing="1px"
               ml="2"
             >
@@ -125,11 +140,19 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           </VStack>
         </Menu>
       </Menu>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))}
+      {LinkItems.map((link) => {
+        const leaveINK = link.name === "Leave" ? "/Leave" : "/dashboard";
+        return (
+          <Link
+            className={Styles.sidebarLinks}
+            key={link.name}
+            href={`/${link.name}`}
+          >
+            {" "}
+            {link.name}
+          </Link>
+        );
+      })}
     </Box>
   );
 };
@@ -137,14 +160,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
+  href?: string;
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
   return (
-    <Link
-      href="#"
-      style={{ textDecoration: "none" }}
-      _focus={{ boxShadow: "none" }}
-    >
+    <Link href={href || "#"} style={{ textDecoration: "none" }}>
       <Flex
         align="center"
         p="4"
@@ -177,51 +197,5 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
-const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-  return (
-    <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 4 }}
-      height="20"
-      alignItems="center"
-      bg={useColorModeValue("white", "gray.900")}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      justifyContent={{ base: "space-between", md: "flex-end" }}
-      {...rest}
-    >
-      <IconButton
-        display={{ base: "flex", md: "none" }}
-        onClick={onOpen}
-        variant="outline"
-        aria-label="open menu"
-        icon={<FiMenu />}
-      />
-
-      <Text
-        display={{ base: "flex", md: "none" }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold"
-      >
-        Logo
-      </Text>
-
-      <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiLogOut />}
-        />
-        <Flex alignItems={"center"}></Flex>
-      </HStack>
-    </Flex>
-  );
-};
+<MobileNav />;
+export type { MobileProps };

@@ -4,6 +4,8 @@ import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+
 import { useEffect, useState } from "react";
 import {
   Modal,
@@ -25,12 +27,31 @@ export default function Home() {
   const [changePass, setChangePass] = useState(false);
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const data = {
+    email: email,
+    password: pass,
+  };
 
-  const handleField = () => {
-    if (email === username && pass === passs) {
-      setChangePass(true);
-    } else {
-      alert("You are Not Signed");
+  console.log(data, "both email and password in one object");
+
+  const handleField = async (e: any) => {
+    e.preventDefault();
+
+    console.log(data);
+
+    try {
+      const res = await fetch(
+        "https://6fd6-103-149-154-79.ap.ngrok.io/api/users-data",
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+          // body: JSON.stringify(data),
+        }
+      );
+      const result = await res.json();
+      console.log(result, "asdfasdfasdf");
+    } catch (err) {
+      console.log(err, "asdfasdfasdfa");
     }
   };
 
@@ -90,7 +111,11 @@ export default function Home() {
                 </Button>
               </div>
             ) : (
-              <div className="login-inputs">
+              <form
+                className="login-inputs"
+                action=""
+                onSubmit={(e) => handleField(e)}
+              >
                 <input
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -103,19 +128,14 @@ export default function Home() {
                   type="password"
                   placeholder="******"
                 />
-                <Button
-                  colorScheme="whatsapp"
-                  onClick={(e) => {
-                    handleField();
-                  }}
-                >
+                <Button colorScheme="whatsapp" type="submit">
                   Login
                 </Button>
-              </div>
+              </form>
             )}
 
             {changePass ? (
-              <Link href="/dashboard">
+              <Link href="/home">
                 {" "}
                 <div className="skip-step">
                   <Button>Skip This step</Button>{" "}

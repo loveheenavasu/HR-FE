@@ -174,3 +174,8 @@ p.skip-step {
 .skip-step {
   text-align: end;
 }
+
+.leave-allCard {
+  display: flex;
+  justify-content: space-between;
+}

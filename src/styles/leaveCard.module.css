@@ -1,0 +1,13 @@
+.leaveCard {
+    width: 360px;
+    background: white;
+    border: 1px solid gray;
+    padding: 20px;
+    height: 275px;
+    margin-top: 36px;
+}
+.leaveCard h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #3f0f9a;
+}
