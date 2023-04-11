@@ -1,0 +1,57 @@
+.leaveDashboard {
+    background: #fff;
+    padding: 22px;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+}
+.leaveDashboard h1 {
+    font-size: 34px;
+    font-weight: 300;
+}
+.leaveDashboard p {
+    font-size: 14px;
+    font-weight: 300;
+}
+.leaveData {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+.leaveBox {
+    background: white;
+    width: 32%;
+    height: 165px;
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+.leaveBox svg{
+    font-size: 25px;
+}
+.leaveSummary {
+    display: flex;
+    width: 100%;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 20px;
+}
+.leaveSummaryBox {
+    width: 200px;
+    text-align: center;
+    border-right: 1px solid lightgray;
+    color: #80af46;
+}
+.leaveSummaryBox svg{
+    margin: 0 auto;
+}
+.fullCalendar {
+    margin: 20px 0px;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+}

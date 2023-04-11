@@ -183,3 +183,44 @@ p.skip-step {
 .homeDashboard h1 {
   font-size: 34px;
 }
+.happinessBox h3 {
+  font-size: 21px;
+  font-weight: 600;
+  color: #3f0f9a;
+}
+.happinessBox {
+  margin: 20px 0px;
+  padding:40px  20px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  background:#fff;
+  width: 100%;
+}
+.happinessBox p {
+  font-size: 15px;
+}
+.hpinesboxInner {
+  display: flex;
+}
+.feelingSide {
+  width: 50%;
+}
+.inputText {
+  display: flex;
+  align-items: center;
+}
+.inputSide form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 7px;
+}
+.inputSide {
+  width: 50%;
+}
+.inputSide form input {
+  width: 100%;
+  outline: none;
+}

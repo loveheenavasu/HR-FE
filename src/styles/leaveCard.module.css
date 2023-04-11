@@ -1,10 +1,12 @@
 .leaveCard {
     width: 360px;
     background: white;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     padding: 20px;
     height: 275px;
-    margin-top: 36px;
+    border-radius: 7px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .leaveCard h3 {
     font-size: 21px;
