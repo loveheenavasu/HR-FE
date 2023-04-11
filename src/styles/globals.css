@@ -105,3 +105,72 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #e4f1fb;
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+}
+.login-field input {
+  width: 100%;
+  margin: 7px 0px;
+  padding: 10px 10px;
+  border: 1px solid gray;
+  border-radius: 7px;
+  outline: none;
+}
+.login-field {
+  background: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #4D4D4D;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+}
+.login-field img {
+  width: 122px;
+  object-fit: contain;
+  margin: 13px auto;
+}
+.login-heading {
+  margin: 10px 0px ;
+}
+.login-heading h1 {
+  font-size: 24px;
+}
+
+.login-field button {
+  width: 100%;
+  margin-top:20px;
+}
+.login_side-img {
+  width: 50%;
+  height: 100%;
+  background: url('../../public/images/aboutimg.png');
+  background-position: left;
+  background-size: cover;
+}
+
+p.skip-step {
+  text-align: end;
+  margin-top: 13px;
+}
+.skip-step button {
+  width: us;
+  width: unset;
+}
+.skip-step {
+  text-align: end;
+}
