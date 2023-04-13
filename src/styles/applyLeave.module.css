@@ -1,0 +1,71 @@
+.leaveApply h1 {
+    font-size: 30px;
+}
+.leaveForm {
+    padding: 15px;
+    display:flex;
+    justify-content: space-between;
+
+}
+.leaveSection h3 {
+    width: 70%;
+}
+.leaveType {
+    width: 70%;
+}
+.leaveDays {
+    width: 30%;
+}
+.rangePicker{
+    width: 70%;
+    margin: 0 0px 0px 55px;
+}
+.leaveType h3{
+    font-size: 16px;
+}
+.leaveDetail {
+    margin: 20px 0px;
+}
+.leaveDateList {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+.leavedates {
+    height: 120px;
+    overflow: auto;
+    background: lightgray;
+}
+.leavedates .chakra-select__wrapper {
+    width: 25%;
+  }
+
+  .leaveunit {
+    margin: 20px 0px;
+}
+.AnnualBalance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.leaveFormWrapper {
+    background: #fff;
+    padding: 15px;
+    width: 70%;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    /* display: flex; */
+}
+.leaveSubmitBtn {
+    width: 44%;
+    margin-top: 25px;
+}
+.annualLeaveCount {
+    width: 30%;
+    padding: 0px 18px 18px;
+    margin: 0px 10px;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+    height: fit-content;
+}
