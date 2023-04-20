@@ -5,6 +5,9 @@
     border: 1px solid lightgray;
     border-radius: 7px;
 }
+.nameRow p {
+    font-size: 11px;
+}
 .leaveData {
     margin: 18px 0px;
 }

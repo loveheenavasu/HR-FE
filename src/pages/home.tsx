@@ -7,6 +7,7 @@ import LeaveCard from "@/components/leaveCard";
 import { FiSend } from "react-icons/fi";
 
 const Home: NextPageWithLayout = () => {
+  
   const [input, setInput] = useState("");
   const handleSubmit = (e: any) => {
     e.preventDefault();

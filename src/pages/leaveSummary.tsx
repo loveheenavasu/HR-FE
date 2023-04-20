@@ -3,6 +3,7 @@ import SidebarWithHeader from "@/components/Layout";
 import type { ReactElement } from "react";
 import type { NextPageWithLayout } from "./_app";
 import { Select } from "@chakra-ui/react";
+import PageHeading from "@/components/pageHeading";
 import LeaveDashboard from "@/components/leaveDashboard";
 import leaveDashboard from "../components/leaveDashboard";
 import Styles from "../styles/leaveSummary.module.css";
@@ -13,16 +14,7 @@ import Link from "next/link";
 const LeaveApply: NextPageWithLayout = () => {
   return (
     <div className={Styles.leaveSummary}>
-      <h3>Leave Summary</h3>
-      <hr style={{ color: "lightgray" }} />
-      <div className={Styles.leaveData}>
-        <label>Year:</label>
-        <Select placeholder="Select option">
-          <option value="option1">2023</option>
-          <option value="option2">2022</option>
-          <option value="option3">2021</option>
-        </Select>
-      </div>
+      <PageHeading heading="Leave Summary" />
       <hr style={{ color: "lightgray" }} />
       <div className={Styles.leaveDataCard}>
         <LeaveDataCard heading="Annual Leave" />

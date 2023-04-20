@@ -1,12 +1,12 @@
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
 // import {Button} from '@chakra-ui/react'
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
-
 import { useEffect, useState } from "react";
+
 import {
   Modal,
   ModalOverlay,
@@ -17,49 +17,78 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 
-let username = "vicky.js@zestgeek.com";
-let passs = "123456789";
-
 export default function Home() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [changePass, setChangePass] = useState(false);
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+
+  const [userId, setUserId] = useState();
+
   const data = {
     email: email,
     password: pass,
   };
 
-  console.log(data, "both email and password in one object");
-
-  const handleField = async (e: any) => {
+  const backendData = (e: any) => {
     e.preventDefault();
+    fetch("");
 
-    console.log(data);
-
-    try {
-      const res = await fetch(
-        "https://6fd6-103-149-154-79.ap.ngrok.io/api/users-data",
-        {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-          // body: JSON.stringify(data),
-        }
-      );
-      const result = await res.json();
-      console.log(result, "asdfasdfasdf");
-    } catch (err) {
-      console.log(err, "asdfasdfasdfa");
+    if (email != null && data.email === email) {
+      // alert("you aere ljdfakjn  ")
+      setChangePass(true);
+      console.log("you are login");
+    } else {
+      alert("You are Not Signed");
     }
   };
 
-  const handlePassword = () => {
+  const handleField = async (e: any) => {
+    console.log("Hello, World! lll");
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:1337/api/getdata", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      console.log("clicked");
+
+      const result = await response.json();
+
+      console.log(result, "result value");
+      const updateflag = { password_change: result.password_change[0] };
+      console.log(
+        result.password_change[0],
+        "result.password_change[0]result.password_change[0]"
+      );
+      setUserId(result.userId[0]);
+
+      if (result.password_change[0] == false) {
+        setChangePass(true);
+      } else if (result.password_change[0] == true) {
+        router.push("/home");
+      }
+    } catch (error) {
+      // Handle any errors that occur during the form submission process
+      console.error("An error occurred while submitting the form:", error);
+    }
+  };
+
+  const handlePassword = async (e: any) => {
+    e.preventDefault();
     if (newPass != confirmPass) {
       alert("Password is not matching");
     } else {
-      alert("password is matching");
+      const res = await fetch("http://localhost:1337/api/getpassword", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ newPass, userId }),
+      });
     }
   };
 
@@ -89,53 +118,61 @@ export default function Home() {
             </div>
             {changePass ? (
               <div className="login-inputs">
-                <input
-                  type="password"
-                  onChange={(e) => setNewPass(e.target.value)}
-                  placeholder="Enter Your New Password"
-                  value={newPass}
-                />
-                <input
-                  onChange={(e) => setConfirmPass(e.target.value)}
-                  value={confirmPass}
-                  type="password"
-                  placeholder="Confirm Your Password"
-                />
-                <Button
-                  colorScheme="whatsapp"
-                  onClick={() => {
-                    handlePassword();
+                <form
+                  action=""
+                  onSubmit={(e) => {
+                    handlePassword(e);
                   }}
                 >
-                  Login
-                </Button>
+                  <input
+                    type="password"
+                    onChange={(e) => setNewPass(e.target.value)}
+                    placeholder="Enter Your New Password"
+                    value={newPass}
+                  />
+                  <input
+                    onChange={(e) => setConfirmPass(e.target.value)}
+                    value={confirmPass}
+                    type="password"
+                    placeholder="Confirm Your Password"
+                  />
+                  <Button colorScheme="whatsapp" type="submit">
+                    Login
+                  </Button>
+                </form>
               </div>
             ) : (
-              <form
-                className="login-inputs"
-                action=""
-                onSubmit={(e) => handleField(e)}
-              >
-                <input
-                  type="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter Your Email"
-                  value={email}
-                />
-                <input
-                  onChange={(e) => setPass(e.target.value)}
-                  value={pass}
-                  type="password"
-                  placeholder="******"
-                />
-                <Button colorScheme="whatsapp" type="submit">
-                  Login
-                </Button>
-              </form>
+              <div className="login-inputs">
+                <form onSubmit={(e) => handleField(e)}>
+                  <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter Your Email"
+                    value={email}
+                  />
+                  <input
+                    onChange={(e) => setPass(e.target.value)}
+                    value={pass}
+                    type="password"
+                    placeholder="******"
+                  />
+                  <Button colorScheme="whatsapp" type="submit">
+                    Login
+                  </Button>
+                </form>
+                {/* <Button
+                  colorScheme="whatsapp"
+                  onClick={(e) => {
+                    backendData(e);
+                  }}
+                >
+                  check
+                </Button> */}
+              </div>
             )}
 
             {changePass ? (
-              <Link href="/home">
+              <Link href="/dashboard">
                 {" "}
                 <div className="skip-step">
                   <Button>Skip This step</Button>{" "}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarWithHeader from "@/components/Layout";
 import type { ReactElement } from "react";
 import type { NextPageWithLayout } from "./_app";
@@ -13,8 +13,27 @@ import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import multiMonthPlugin from "@fullcalendar/multimonth";
 import { background } from "@chakra-ui/react";
-
+import dayjs from "dayjs";
+import { ReactFullYearScheduler } from "react-full-year-scheduler";
+import "react-full-year-scheduler/dist/style.css";
 const Leave: NextPageWithLayout = () => {
+  const [events, setEvents] = useState([
+    {
+      eventName: "Public Holiday",
+      startDate: dayjs("2023-04-01"),
+      endDate: dayjs("2023-04-30"),
+      eventBgColor: "lightblue",
+      eventTextColor: "white",
+    },
+    {
+      eventName: "Your Holiday",
+      startDate: dayjs("2023-05-01"),
+      endDate: dayjs("2023-05-29"),
+
+      eventBgColor: "lightgray",
+      eventTextColor: "white",
+    },
+  ]);
   return (
     <div>
       <div className={Styles.leaveDashboard}>
@@ -39,15 +58,9 @@ const Leave: NextPageWithLayout = () => {
             <p> Leave Summary</p>
           </div>{" "}
         </Link>
-        <Link href="/leaveAdjustment">
-          <div className={Styles.leaveSummaryBox}>
-            <FiCalendar />
-            <p> Leave Adjustment</p>
-          </div>
-        </Link>
       </div>
       <div className={Styles.fullCalendar}>
-        <FullCalendar
+        {/* <FullCalendar
           plugins={[multiMonthPlugin]}
           initialView="dayGridYear"
           views={{
@@ -73,6 +86,32 @@ const Leave: NextPageWithLayout = () => {
           ]}
 
           // Add more options here
+        /> */}
+        <ReactFullYearScheduler
+          events={events}
+          locale="en"
+          dateTooltipTheme="material"
+          weekSeparatorWidth={5}
+          weekSeparatorColor="lightgray"
+          monthNameBackgroundColor="white"
+          headerWeekDayBgColor="#fff"
+          headerWeekendBgColor="#c1bebe77"
+          weekendCellBackgroundColor="#c1bebe77"
+          weekendCellTextColor="#837e88"
+          headerTextColor="#3d3c3c"
+          weekDayCellBackgroundColor="rgba(75, 68, 83, 0.69)"
+          weekDayCellTextColor="white"
+          selectionColor="black"
+          selectionTextColor="white"
+          // firstDayOfWeek="Monday"
+
+          readonlyCalendar={true}
+          showWeekSeparator={true}
+          showTodayButton={true}
+          enableWeekendSelection={true}
+          minCellWidth={30}
+          showSeparatorInHeader={false}
+          enableEventOverwriting={true}
         />
       </div>
     </div>

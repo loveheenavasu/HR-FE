@@ -9,6 +9,13 @@ import Image from "next/image";
 import { FiTrash2, FiAlertCircle, FiPlus } from "react-icons/fi";
 import "rsuite/dist/rsuite.min.css";
 import ProgressBar from "@/components/progressBar";
+import {
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from "@chakra-ui/react";
 
 const LeaveApply: NextPageWithLayout = () => {
   const [start_Date, setStartDate] = useState(null);
@@ -39,12 +46,21 @@ const LeaveApply: NextPageWithLayout = () => {
     return dates;
   };
   console.log(allDate, "all dates outside the function");
-  const handleDelteClick = (item: "string") => {
+  const handleDelteClick = (item: String) => {
     const filterData = allDate.filter((date) => {
       return date != item;
     });
     setAllDate(filterData);
   };
+  let leaves = 6;
+ 
+
+  // @ts-nocheck
+  // const renderData: React.ReactElement = () => {
+  //   const abc = 6;
+
+  //   return allDate.length > leaves ? <>hello........</> : <>false........</>;
+  // };
 
   // console.log(DateRangePicker, "range picker all value");
   return (
@@ -74,21 +90,39 @@ const LeaveApply: NextPageWithLayout = () => {
               <Box className={Styles.leaveDetail}>
                 <p>Leave Detail</p>
                 <Box className={Styles["leavedates"]}>
-                  {allDate?.map((item, id) => {
-                    console.log(item, "itemitem");
-                    return (
-                      <Box key={id} className={Styles.leaveDateList}>
-                        <p>{item}</p>
+                  {/* {console.log(allDate.length, "allldate length")} */}
+                  {/* {leaveCount(allDate, leaves)} */}
+                  {allDate.length > leaves ? (
+                    <p>
+                      You do not have enough leave balance for your choosen
+                      dates
+                    </p>
+                  ) : null}
+                  {
+                    // console.log("leave is available");
+                    allDate?.map((item: any, id: any) => {
+                      // console.log(item, "itemitem");
+                      return (
+                        <Box key={id}>
+                          <Box
+                            alignItems="center"
+                            className={Styles.leaveDateList}
+                          >
+                            <p>{item}</p>
 
-                        <Select w={"25%"}>
-                          <option value="option1">Full Day</option>
-                          <option value="option2">AM</option>
-                          <option value="option3">PM</option>
-                        </Select>
-                        <FiTrash2 onClick={() => handleDelteClick(item)} />
-                      </Box>
-                    );
-                  })}
+                            <Select w={"25%"}>
+                              <option value="option1">Full Day</option>
+                              <option value="option2">AM</option>
+                              <option value="option3">PM</option>
+                            </Select>
+                            <Box onClick={() => handleDelteClick(item)}>
+                              <FiTrash2 />
+                            </Box>
+                          </Box>
+                        </Box>
+                      );
+                    })
+                  }
                 </Box>
                 <Box display="flex" alignItems="center">
                   <FiAlertCircle /> This excludes Public Holidays, non-working
@@ -102,7 +136,11 @@ const LeaveApply: NextPageWithLayout = () => {
                   <option value="option2">AM</option>
                   <option value="option3">PM</option>
                 </Select>
-                <Textarea mt="5" placeholder="Here is a sample placeholder" />
+                <Textarea
+                  size="sm"
+                  mt="5"
+                  placeholder="Here is a sample placeholder"
+                />
               </Box>
             </Box>
             <Box p={"2"} className={Styles.AnnualBalance}>
@@ -113,7 +151,7 @@ const LeaveApply: NextPageWithLayout = () => {
                 </Box>
                 <Box marginBottom="20px" marginTop="20px">
                   <p> Total leave days</p>
-                  <span>5.5 days</span>
+                  <span>{leaves} days</span>
                 </Box>
               </Box>
               <Box>
@@ -137,9 +175,9 @@ const LeaveApply: NextPageWithLayout = () => {
               </Box>
             </Box>
           </Box>
-          <Box m="5">
+          <Box mt="1">
             Remarks
-            <Textarea placeholder="Here is a sample placeholder" />
+            <Textarea size="sm" placeholder="Here is a sample placeholder" />
           </Box>
           <Box marginTop="20px" textAlign="center">
             <Box display="flex" justifyContent={"center"} alignItems="center">
@@ -162,6 +200,33 @@ const LeaveApply: NextPageWithLayout = () => {
         <Box className={Styles.annualLeaveCount}>
           <h3>Annual </h3>
           <ProgressBar />
+          <Box className={Styles.leaveLists}>
+            <UnorderedList>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                Entitlement <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                {" "}
+                Balance As At 01/01/2023 <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                {" "}
+                Earned Leave Since 01/01/2023 <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                Taken Since 01/01/2023 <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                Leave Balance <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                Balance From Previous Year <span>28days</span>
+              </ListItem>
+              <ListItem display="flex" justifyContent={"space-between"}>
+                Pending <span>28days</span>
+              </ListItem>
+            </UnorderedList>
+          </Box>
         </Box>
       </Box>
     </Box>

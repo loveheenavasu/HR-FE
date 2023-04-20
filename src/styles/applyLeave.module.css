@@ -2,7 +2,7 @@
     font-size: 30px;
 }
 .leaveForm {
-    padding: 15px;
+   
     display:flex;
     justify-content: space-between;
 
@@ -48,10 +48,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .leaveFormWrapper {
     background: #fff;
     padding: 15px;
-    width: 70%;
+    width: 65%;
     border: 1px solid lightgray;
     border-radius: 7px;
     /* display: flex; */
@@ -61,11 +62,16 @@
     margin-top: 25px;
 }
 .annualLeaveCount {
-    width: 30%;
+    width: 35%;
     padding: 0px 18px 18px;
     margin: 0px 10px;
     background: #fff;
     border-radius: 7px;
     border: 1px solid lightgray;
     height: fit-content;
+}
+.leaveLists li {
+    border-top: 1px solid lightgray;
+    padding: 5px 0px;
+    font-size: 14px;
 }

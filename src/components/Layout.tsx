@@ -68,7 +68,7 @@ export default function SidebarWithHeader({
         display={{ base: "none", md: "block" }}
       />
       <Drawer
-        autoFocus={false}
+        autoFocus={true}
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
