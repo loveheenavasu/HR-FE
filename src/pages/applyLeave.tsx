@@ -18,19 +18,19 @@ import {
 } from "@chakra-ui/react";
 
 const LeaveApply: NextPageWithLayout = () => {
-  const [start_Date, setStartDate] = useState(null);
-  const [end_Date, setEndDate] = useState(null);
+
   const [dates_between, setDatesBetween] = useState([]);
   const [allDate, setAllDate] = useState([]);
+  const [selectedOption, setSelectedOption] = useState<string>("full Day");
+  
   const handleRangePicker = (value: any) => {
     const [startDate, endDate] = value;
-    console.log(startDate, endDate, "enddate and startdate");
-    setStartDate(startDate);
-    setEndDate(endDate);
+
+
     const dates: any = getDatesBetween(startDate, endDate);
     setDatesBetween(dates);
-    console.log(value, "value change");
   };
+
 
   const getDatesBetween = (startdate: any, enddate: any) => {
     const dates: any = [];
@@ -41,11 +41,9 @@ const LeaveApply: NextPageWithLayout = () => {
       dates.push(current_date.toISOString().slice(0, 10));
       current_date.setDate(current_date.getDate() + 1);
     }
-    console.log(dates, "all dates");
     setAllDate(dates);
     return dates;
   };
-  console.log(allDate, "all dates outside the function");
   const handleDelteClick = (item: String) => {
     const filterData = allDate.filter((date) => {
       return date != item;
@@ -53,16 +51,14 @@ const LeaveApply: NextPageWithLayout = () => {
     setAllDate(filterData);
   };
   let leaves = 6;
+
+  const handleChange = (event:React.ChangeEvent<HTMLSelectElement>,id:number,) => {
+      setSelectedOption((prev:any)=>{
+        return {...prev,[id]:event.target.value}
+      });
+    
+  };
  
-
-  // @ts-nocheck
-  // const renderData: React.ReactElement = () => {
-  //   const abc = 6;
-
-  //   return allDate.length > leaves ? <>hello........</> : <>false........</>;
-  // };
-
-  // console.log(DateRangePicker, "range picker all value");
   return (
     <Box className={Styles.leaveApply}>
       <h1>Apply Leave</h1>
@@ -89,9 +85,7 @@ const LeaveApply: NextPageWithLayout = () => {
               </Box>
               <Box className={Styles.leaveDetail}>
                 <p>Leave Detail</p>
-                <Box className={Styles["leavedates"]}>
-                  {/* {console.log(allDate.length, "allldate length")} */}
-                  {/* {leaveCount(allDate, leaves)} */}
+                <Box className={Styles.leavedates}>
                   {allDate.length > leaves ? (
                     <p>
                       You do not have enough leave balance for your choosen
@@ -99,9 +93,7 @@ const LeaveApply: NextPageWithLayout = () => {
                     </p>
                   ) : null}
                   {
-                    // console.log("leave is available");
                     allDate?.map((item: any, id: any) => {
-                      // console.log(item, "itemitem");
                       return (
                         <Box key={id}>
                           <Box
@@ -109,12 +101,13 @@ const LeaveApply: NextPageWithLayout = () => {
                             className={Styles.leaveDateList}
                           >
                             <p>{item}</p>
-
-                            <Select w={"25%"}>
-                              <option value="option1">Full Day</option>
-                              <option value="option2">AM</option>
-                              <option value="option3">PM</option>
+                            <Select bg="white" w="25%" value={selectedOption[id] || 'full Day'} onChange={(e)=>handleChange(e,id)}>
+                            <option value="AM">AM</option>
+                              <option value="PM">PM</option>
+                              <option value="full Day">Full Day</option>
                             </Select>
+                            
+                            {selectedOption[id]=="full Day" ? <p>1 day</p>:<p>half day</p>}
                             <Box onClick={() => handleDelteClick(item)}>
                               <FiTrash2 />
                             </Box>

@@ -18,8 +18,6 @@ const LeaveApply: NextPageWithLayout = () => {
       <hr style={{ color: "lightgray" }} />
       <div className={Styles.leaveDataCard}>
         <LeaveDataCard heading="Annual Leave" />
-        {/* <LeaveDataCard heading="Hospitalisation Leave*" />
-        <LeaveDataCard heading="Sick Leave*" /> */}
       </div>
       <hr style={{ height: "4px", background: "lightgray" }} />
       <div className={Styles.leaveName}>

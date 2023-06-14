@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
-// import {Button} from '@chakra-ui/react'
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,35 +18,34 @@ import {
 
 export default function Home() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    pass: "",
+    newPass: "",
+    confirmPass: "",
+  });
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [changePass, setChangePass] = useState(false);
-  const [newPass, setNewPass] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
 
   const [userId, setUserId] = useState();
 
   const data = {
-    email: email,
-    password: pass,
+    email: formData.email,
+    password: formData.pass,
   };
 
   const backendData = (e: any) => {
     e.preventDefault();
     fetch("");
 
-    if (email != null && data.email === email) {
-      // alert("you aere ljdfakjn  ")
+    if (formData.email != null && data.email === formData.email) {
       setChangePass(true);
-      console.log("you are login");
     } else {
       alert("You are Not Signed");
     }
   };
 
   const handleField = async (e: any) => {
-    console.log("Hello, World! lll");
     e.preventDefault();
 
     try {
@@ -56,16 +54,10 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      console.log("clicked");
 
       const result = await response.json();
 
-      console.log(result, "result value");
       const updateflag = { password_change: result.password_change[0] };
-      console.log(
-        result.password_change[0],
-        "result.password_change[0]result.password_change[0]"
-      );
       setUserId(result.userId[0]);
 
       if (result.password_change[0] == false) {
@@ -75,21 +67,27 @@ export default function Home() {
       }
     } catch (error) {
       // Handle any errors that occur during the form submission process
-      console.error("An error occurred while submitting the form:", error);
     }
   };
 
   const handlePassword = async (e: any) => {
     e.preventDefault();
-    if (newPass != confirmPass) {
+    if (formData.newPass != formData.confirmPass) {
       alert("Password is not matching");
     } else {
       const res = await fetch("http://localhost:1337/api/getpassword", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ newPass, userId }),
+        body: JSON.stringify({ newPass: formData.newPass, userId }),
       });
     }
+  };
+
+  const handleChange = (e:any) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   return (
@@ -126,13 +124,13 @@ export default function Home() {
                 >
                   <input
                     type="password"
-                    onChange={(e) => setNewPass(e.target.value)}
+                    onChange={handleChange}
                     placeholder="Enter Your New Password"
-                    value={newPass}
+                    value={formData.newPass}
                   />
                   <input
-                    onChange={(e) => setConfirmPass(e.target.value)}
-                    value={confirmPass}
+                    onChange={handleChange}
+                    value={formData.confirmPass}
                     type="password"
                     placeholder="Confirm Your Password"
                   />
@@ -146,13 +144,13 @@ export default function Home() {
                 <form onSubmit={(e) => handleField(e)}>
                   <input
                     type="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={ handleChange}
                     placeholder="Enter Your Email"
-                    value={email}
+                    value={formData.email}
                   />
                   <input
-                    onChange={(e) => setPass(e.target.value)}
-                    value={pass}
+                    onChange={handleChange}
+                    value={formData.pass}
                     type="password"
                     placeholder="******"
                   />
@@ -160,14 +158,6 @@ export default function Home() {
                     Login
                   </Button>
                 </form>
-                {/* <Button
-                  colorScheme="whatsapp"
-                  onClick={(e) => {
-                    backendData(e);
-                  }}
-                >
-                  check
-                </Button> */}
               </div>
             )}
 

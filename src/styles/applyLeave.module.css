@@ -36,9 +36,6 @@
     overflow: auto;
     background: lightgray;
 }
-.leavedates .chakra-select__wrapper {
-    width: 25%;
-  }
 
   .leaveunit {
     margin: 20px 0px;
@@ -55,7 +52,6 @@
     width: 65%;
     border: 1px solid lightgray;
     border-radius: 7px;
-    /* display: flex; */
 }
 .leaveSubmitBtn {
     width: 44%;

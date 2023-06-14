@@ -60,33 +60,6 @@ const Leave: NextPageWithLayout = () => {
         </Link>
       </div>
       <div className={Styles.fullCalendar}>
-        {/* <FullCalendar
-          plugins={[multiMonthPlugin]}
-          initialView="dayGridYear"
-          views={{
-            // Configure custom views
-            dayGridYear: {
-              // Define dayGridYear view
-              type: "multiMonthYear",
-              multiMonthMaxColumns: 3, // Set duration to 1 year
-            },
-          }}
-          events={[
-            {
-              title: "Event 1",
-              start: "2023-04-15T10:00:00", // Start date and time in ISO format
-              end: "2023-04-15T12:00:00", // End date and time in ISO format
-            },
-            {
-              title: "Event 2",
-              start: "2023-04-17T14:00:00",
-              end: "2023-04-17T16:00:00",
-            },
-            // Add events here
-          ]}
-
-          // Add more options here
-        /> */}
         <ReactFullYearScheduler
           events={events}
           locale="en"
@@ -103,7 +76,6 @@ const Leave: NextPageWithLayout = () => {
           weekDayCellTextColor="white"
           selectionColor="black"
           selectionTextColor="white"
-          // firstDayOfWeek="Monday"
 
           readonlyCalendar={true}
           showWeekSeparator={true}
