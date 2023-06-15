@@ -19,6 +19,7 @@ export const counterSlice = createSlice({
     setCelebration: (state, action) => {
       state.celebration = action.payload;
     },
+    
   },
 });
 

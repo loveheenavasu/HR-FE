@@ -1,0 +1,292 @@
+[
+  {
+    "Leave_Type": "Annual",
+    "from": "1/17/2023",
+    "To": "5/20/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": " Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "Cancallation_Remarks": "Nulla mollis molestie lorem. Quisque ut erat.",
+    "Action": " vitae ipsum. Aliquam non mauris."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "12/30/2022",
+    "To": "7/30/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": " dui luctus rutrum. Nulla tellus.",
+    "Cancallation_Remarks": "Integer tincidunt ante velNam nulla. Integer tempus vel, pede.",
+    "Action": " \n\nSed ante. Vivamus tortor. Duis mattis egestas metus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "10/3/2022",
+    "To": "2/3/2023",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": " sed magna at nunc commodo placerat.",
+    "Cancallation_Remarks": "Quisque porta  semper rutrum, nulla. Nunc purus.",
+    "Action": "    justsapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "2/22/2023",
+    "To": "1/3/2023",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": " et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est..",
+    "Cancallation_Remarks": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "Action": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc "
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "8/2/2022",
+    "To": "3/25/2023",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": " Morbi a ipsum. Integer a nibh.",
+    "Cancallation_Remarks": "  Cras pellentesque volutpat dui.",
+    "Action": "blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci"
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "4/4/2023",
+    "To": "4/6/2023",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": "unc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "Cancallation_Remarks": "Proin  Vivamus metus arc vulputate vitae, nisl.",
+    "Action": "Prtis sapien sapien non mi. Integer ac neque."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "2/10/2023",
+    "To": "2/16/2023",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "Donec lobortis sapien sapien non mi. Integer ac neque.",
+    "Cancallation_Remarks": "In hac habitasse platea dictumsto.",
+    "Action": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet jus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "1/30/2023",
+    "To": "6/4/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "condimentum.",
+    "Cancallation_Remarks": " rutrum at, lorem.",
+    "Action": "Cras non velit nec nisi  pellentesque."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "10/4/2022",
+    "To": "5/12/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "Praesentbi ut odio.",
+    "Cancallation_Remarks": "Maecenas tristiqon, sodales sed, tincidunt eu, felis.",
+    "Action": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "3/23/2023",
+    "To": "5/23/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "Cancallation_Remarks": "  odio consequat varius.",
+    "Action": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus"
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "10/4/2022",
+    "To": "12/5/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "Curs sit amus at, diam.",
+    "Cancallation_Remarks": "Curabitur atbus at, diam.",
+    "Action": "vel nisl. Duis ac nibh. Fusce lacus purus, aliquet a lectus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "11/10/2022",
+    "To": "1/21/2023",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "ibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "Cancallation_Remarks": "Donec amet lobortis sapien sapien non mi. Integer ac neque.",
+    "Action": "Duis bibendum, felis sed interdum venenatis, turpism."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "8/26/2022",
+    "To": "10/2/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": " Quisque ut erat.",
+    "Cancallation_Remarks": "Quisque id justo sit amet sapien dignissim vesti eros.",
+    "Action": "In congue. Etiam justo. Etiam pretium iaculis justo."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "11/12/2022",
+    "To": "9/30/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "Curabitur m augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "Cancallation_Remarks": " e at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "Action": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis "
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "9/25/2022",
+    "To": "5/22/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": " nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "Cancallation_Remarks": "  placerat.\n\nPraesent blandit. Nam null tincidunt eget, tempus vel, pede.",
+    "Action": "Lorem ipsum varius ut, blandicubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "3/11/2023",
+    "To": "12/25/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "  sapien sapien non mi. Integer ac neque.",
+    "Cancallation_Remarks": "odio. Morbi vel lectus in quam fringilla rhoncus.",
+    "Action": "Morbi non lectus. Aliquam sit amet diam in "
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "10/17/2022",
+    "To": "4/10/2023",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": "Vsed augue. Aliquam erat volutpat.",
+    "Cancallation_Remarks": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "Action": "Phasellus in felis. Donec semper sapien a libero. Nam dui."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "9/16/2022",
+    "To": "9/9/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "Cancallation_Remarks": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "Action": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat "
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "9/10/2022",
+    "To": "12/7/2022",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": " lectus in quam fringilla rhoncus.",
+    "Cancallation_Remarks": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "Action": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "7/17/2022",
+    "To": "8/25/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": " feugiat non, pretium quis, lectus.",
+    "Cancallation_Remarks": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque vpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "Action": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer "
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "8/5/2022",
+    "To": "10/19/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "Cancallation_Remarks": "Nullam sit amet turpis elemen aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "Action": "Cras mi pede, malesuada in"
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "3/23/2023",
+    "To": "4/30/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "Fusce consequat. Nulla nisl. Nunc nisl.",
+    "Cancallation_Remarks": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interd eu est congue elementum.",
+    "Action": "Nullget eros elementum pellentesque."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "10/15/2022",
+    "To": "10/24/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "Cancallation_Remarks": "\n\nProin eu mi. Nulla ac enim. In tempommy. Integer non velit.",
+    "Action": "Pra consectetuer adipiscing elit."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "11/3/2022",
+    "To": "2/18/2023",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": "viverra dapibus. Nulla suscipit ligula in lacus.",
+    "Cancallation_Remarks": "Sed sagittis. Nam congue, h in lectus.",
+    "Action": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "1/16/2023",
+    "To": "4/13/2023",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "Cancallation_Remarks": "Proin interdum maurisvehicula condimentum.",
+    "Action": "Praesenttempus vel, pede."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "8/25/2022",
+    "To": "11/17/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "   tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "Cancallation_Remarks": "Maecenas tr   Aliquam non mauris.",
+    "Action": "Sed ante. Vivamus tortor. Duis mattis egestas metus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "11/19/2022",
+    "To": "7/15/2022",
+    "Duration": 2,
+    "Status": "Approved",
+    "Remarks": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "Cancallation_Remarks": "  dapibus. Nulla suscipit ligula in lacus.",
+    "Action": " c habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "1/20/2023",
+    "To": "9/21/2022",
+    "Duration": 1,
+    "Status": "Approved",
+    "Remarks": " Morbi a ipsum. Integer a nibh.",
+    "Cancallation_Remarks": " ac diam. Cras pellentesque volutpat dui.",
+    "Action": "  \n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."
+  },
+  {
+    "Leave_Type": "Annual",
+    "from": "7/26/2022",
+    "To": "2/25/2023",
+    "Duration": 3,
+    "Status": "Approved",
+    "Remarks": "tae ipsum. Aliquam non mauris.",
+    "Cancallation_Remarks": "Cra, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "Action": " Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+  }
+]

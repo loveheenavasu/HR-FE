@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import {
   IconButton,
@@ -37,6 +38,10 @@ import { MobileProps } from "./Layout";
 import { useRef } from "react";
 
 const MobileNav = () => {
+  const router = useRouter();
+  const logout = () => {
+    router.push("/");
+  };
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
@@ -60,6 +65,9 @@ const MobileNav = () => {
 
         <IconButton
           size="lg"
+          onClick={() => {
+            logout();
+          }}
           variant="ghost"
           aria-label="open menu"
           icon={<FiLogOut />}
