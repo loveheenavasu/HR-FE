@@ -145,10 +145,12 @@ export default function Home() {
                   <input
                     type="email"
                     onChange={ handleChange}
+                    name="email"
                     placeholder="Enter Your Email"
                     value={formData.email}
                   />
                   <input
+                    name="pass"
                     onChange={handleChange}
                     value={formData.pass}
                     type="password"
