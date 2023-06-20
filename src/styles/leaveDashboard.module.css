@@ -18,15 +18,21 @@
     flex-wrap: wrap;
     margin: 20px 0px;
 }
-.leaveBox {
+.MainWrapper{
     background: white;
     width: 32%;
     height: 165px;
     padding: 15px;
     border-radius: 7px;
     border: 1px solid lightgray;
+}
+.leaveBox {
     display: flex;
     justify-content: space-between;
+}
+.description{
+    color: skyblue;
+    font-size: larger;
 }
 .leaveBox svg{
     font-size: 25px;

@@ -1,0 +1,25 @@
+.MainWrapper{
+display: flex;
+}
+
+.IconWrapper{
+    font-size: 60px;
+    color: darkgray;
+}
+
+.InfoWrapper{
+    margin-left: 25px;
+}
+
+.date{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.name{
+    font-size: 14px;
+}
+
+.event{
+    font-size: 14px;
+}

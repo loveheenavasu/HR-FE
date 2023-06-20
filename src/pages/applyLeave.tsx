@@ -76,7 +76,7 @@ const LeaveApply: NextPageWithLayout = () => {
                 <Box className={Styles.rangePicker}>
                   <p>Leave Period</p>
                   <DateRangePicker
-                    appearance="subtle"
+                    // appearance="subtle"
                     onChange={(e: any) => {
                       handleRangePicker(e);
                     }}
@@ -101,7 +101,7 @@ const LeaveApply: NextPageWithLayout = () => {
                             className={Styles.leaveDateList}
                           >
                             <p>{item}</p>
-                            <Select bg="white" w="25%" value={selectedOption[id] || 'full Day'} onChange={(e)=>handleChange(e,id)}>
+                            <Select bg="white" w="25%" p="0 5px" value={selectedOption[id] || 'full Day'} onChange={(e)=>handleChange(e,id)}>
                             <option value="AM">AM</option>
                               <option value="PM">PM</option>
                               <option value="full Day">Full Day</option>
@@ -155,7 +155,7 @@ const LeaveApply: NextPageWithLayout = () => {
                   color="blue"
                 >
                   <FiPlus />
-                  Add person via emial
+                  Add person via email
                 </Box>
                 <Box
                   marginBottom="20px"

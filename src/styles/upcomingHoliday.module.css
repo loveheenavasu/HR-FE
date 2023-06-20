@@ -1,0 +1,23 @@
+.MainWrapper{
+    margin-top: 80px;
+}
+.heading{
+    font-size: 21px;
+    font-weight: 600;
+    color: #3f0f9a;
+}
+.holidayWrapper {
+    display: flex;
+}
+.icon{
+font-size: 40px;
+}
+.holidayNameWrapper{
+    margin-left: 10px;
+}
+.holidayName{
+    color: darkgray;
+}
+.date{
+    color: darkgray;
+}

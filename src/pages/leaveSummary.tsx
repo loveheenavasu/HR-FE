@@ -12,12 +12,22 @@ import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 const LeaveApply: NextPageWithLayout = () => {
+
+  const data = [
+    { leave: 'Annual Leave', daysLeft: "5.5 Days"  },
+    { leave: 'Hospitalization Leave*', daysLeft: "5.5 Days"   },
+    { leave: 'Sick Leave*', daysLeft: "5.5 Days"   },
+  ];
+
+
   return (
     <div className={Styles.leaveSummary}>
       <PageHeading heading="Leave Summary" />
       <hr style={{ color: "lightgray" }} />
       <div className={Styles.leaveDataCard}>
-        <LeaveDataCard heading="Annual Leave" />
+        {data.map((item,index)=>(
+        <LeaveDataCard key={index} heading={item.leave} days={item.daysLeft}/>
+        ))}
       </div>
       <hr style={{ height: "4px", background: "lightgray" }} />
       <div className={Styles.leaveName}>

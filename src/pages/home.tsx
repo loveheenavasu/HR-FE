@@ -5,6 +5,11 @@ import type { ReactElement } from "react";
 import type { NextPageWithLayout } from "./_app";
 import LeaveCard from "@/components/leaveCard";
 import { FiSend } from "react-icons/fi";
+import { RxAvatar } from "react-icons/rx";
+import UpcomingHoliday from "@/components/upcomingHoliday";
+import CelebrationEvent from "@/components/CelebrationEvent";
+import CompanyLinks from "@/components/CompanyLinks";
+import NewHires from "@/components/NewHires";
 
 const Home: NextPageWithLayout = () => {
   
@@ -17,10 +22,18 @@ const Home: NextPageWithLayout = () => {
     <div className="homeDashboard">
       <h1>General Dashboard</h1>
       <div className="leave-allCard">
-        <LeaveCard heading="Upcoming Holiday" />
-        <LeaveCard heading="Celebration" />
-        <LeaveCard heading=" Company Links" />
-        <LeaveCard heading=" New Hires" />
+      <LeaveCard heading="Upcoming Holiday" text="No Upcoming Leaves">
+    <UpcomingHoliday heading="Upcoming Public Holiday" holidayName="Good Friday" date="07 April 2023" />
+  </LeaveCard>
+  <LeaveCard heading="Celebration" >
+    <CelebrationEvent icon={<RxAvatar/>} name="Tee Kai Xuan" date="08 Apr, Sat" event="Happy Work Anniversary!"/>
+  </LeaveCard>
+        <LeaveCard heading=" Company Links">
+          <CompanyLinks/>
+        </LeaveCard>
+        <LeaveCard heading=" New Hires">
+          <NewHires/>
+          </LeaveCard>
       </div>
       <div className="happinessBox">
         <h3>Happiness</h3>

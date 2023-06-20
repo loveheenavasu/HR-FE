@@ -41,9 +41,9 @@ const Leave: NextPageWithLayout = () => {
         <p>check your leaves, leave balance or apply for one.</p>
       </div>
       <div className={Styles.leaveData}>
-        <LeaveDashboard heading="Upcoming Leave" icon={<FiHome />} />
-        <LeaveDashboard heading="Last Leave Taken" icon={<FiCalendar />} />
-        <LeaveDashboard heading="Next Public Holiday" icon={<FiGift />} />
+        <LeaveDashboard heading="Upcoming Leave" icon={<FiHome />} description="No Upcoming leaves"/>
+        <LeaveDashboard heading="Last Leave Taken" icon={<FiCalendar />} description="1 Days"/>
+        <LeaveDashboard heading="Next Public Holiday" icon={<FiGift />} description="Good Friday"/>
       </div>
       <div className={Styles.leaveSummary}>
         <Link href="/applyLeave">

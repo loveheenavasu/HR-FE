@@ -5,7 +5,7 @@ const LeaveDataCard = (props: any) => {
       <h3>{props.heading}</h3>
       <div className="leaveData">
         <h2>
-          5.5 Days <span>balance</span>
+          {props.days} <span>balance</span>
         </h2>
       </div>
     </div>
