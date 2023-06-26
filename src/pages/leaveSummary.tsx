@@ -15,8 +15,8 @@ const LeaveApply: NextPageWithLayout = () => {
 
   const data = [
     { leave: 'Annual Leave', daysLeft: "5.5 Days"  },
-    { leave: 'Hospitalization Leave*', daysLeft: "5.5 Days"   },
-    { leave: 'Sick Leave*', daysLeft: "5.5 Days"   },
+    { leave: 'Hospitalization Leave*', daysLeft: "58 Days"   },
+    { leave: 'Sick Leave*', daysLeft: "12 Days"   },
   ];
 
 

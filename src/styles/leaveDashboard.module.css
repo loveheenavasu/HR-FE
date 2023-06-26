@@ -60,4 +60,12 @@
     padding: 25px;
     border: 1px solid lightgray;
     border-radius: 7px;
+    overflow: scroll;
+}
+
+.secondDescription{
+    font-size: 12px;
+}
+.date{
+    font-size: 12px;
 }

@@ -8,6 +8,8 @@ const LeaveDashboard = (props: any) => {
       {props.icon}
       </div>
       <div className={Styles.description}>{props.description}</div>
+      <div className={Styles.secondDescription}>{props.secondDescription}</div>
+      <div className={Styles.date}>{props.date}</div>
     </div>
   );
 };

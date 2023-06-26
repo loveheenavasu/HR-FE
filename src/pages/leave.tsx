@@ -6,34 +6,39 @@ import Styles from "../styles/leaveDashboard.module.css";
 import LeaveDashboard from "@/components/leaveDashboard";
 import leaveDashboard from "../components/leaveDashboard";
 import { FiHome, FiCalendar, FiGift } from "react-icons/fi";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
 import Link from "next/link";
-import interactionPlugin from "@fullcalendar/interaction";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import multiMonthPlugin from "@fullcalendar/multimonth";
-import { background } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { ReactFullYearScheduler } from "react-full-year-scheduler";
 import "react-full-year-scheduler/dist/style.css";
+import { Calendar, CalendarControls } from "react-yearly-calendar";
 const Leave: NextPageWithLayout = () => {
-  const [events, setEvents] = useState([
-    {
-      eventName: "Public Holiday",
-      startDate: dayjs("2023-04-01"),
-      endDate: dayjs("2023-04-30"),
-      eventBgColor: "lightblue",
-      eventTextColor: "white",
-    },
-    {
-      eventName: "Your Holiday",
-      startDate: dayjs("2023-05-01"),
-      endDate: dayjs("2023-05-29"),
-
-      eventBgColor: "lightgray",
-      eventTextColor: "white",
-    },
-  ]);
+  const customCSSclasses = {
+    leavesTaken: [
+      '2023-04-25',
+      '2023-05-12',
+      '2023-06-18',
+      '2023-08-15',
+      '2023-11-09'
+    ],
+    firstHalf: [
+      '2023-05-24',
+      '2023-07-21',
+      '2023-06-30',
+      '2023-08-11',
+      '2023-11-21'
+    ],
+    secondHalf: [
+      '2023-06-20',
+      '2023-12-18',
+    ],
+    publicHoliday: [
+      '2023-02-27',
+      '2023-07-05',
+      '2023-03-18',
+      '2023-10-25',
+      '2023-12-25'
+    ],
+    weekend: 'Sat,Sun',
+  }
   return (
     <div>
       <div className={Styles.leaveDashboard}>
@@ -42,8 +47,8 @@ const Leave: NextPageWithLayout = () => {
       </div>
       <div className={Styles.leaveData}>
         <LeaveDashboard heading="Upcoming Leave" icon={<FiHome />} description="No Upcoming leaves"/>
-        <LeaveDashboard heading="Last Leave Taken" icon={<FiCalendar />} description="1 Days"/>
-        <LeaveDashboard heading="Next Public Holiday" icon={<FiGift />} description="Good Friday"/>
+        <LeaveDashboard heading="Last Leave Taken" icon={<FiCalendar />} description="1 Days" secondDescription="Annual" date="10/03/2023 AM - 10/03/23 PM"/>
+        <LeaveDashboard heading="Next Public Holiday" icon={<FiGift />} description="Good Friday" date="On 07/04/2023"/>
       </div>
       <div className={Styles.leaveSummary}>
         <Link href="/applyLeave">
@@ -60,31 +65,7 @@ const Leave: NextPageWithLayout = () => {
         </Link>
       </div>
       <div className={Styles.fullCalendar}>
-        <ReactFullYearScheduler
-          events={events}
-          locale="en"
-          dateTooltipTheme="material"
-          weekSeparatorWidth={5}
-          weekSeparatorColor="lightgray"
-          monthNameBackgroundColor="white"
-          headerWeekDayBgColor="#fff"
-          headerWeekendBgColor="#c1bebe77"
-          weekendCellBackgroundColor="#c1bebe77"
-          weekendCellTextColor="#837e88"
-          headerTextColor="#3d3c3c"
-          weekDayCellBackgroundColor="rgba(75, 68, 83, 0.69)"
-          weekDayCellTextColor="white"
-          selectionColor="black"
-          selectionTextColor="white"
-
-          readonlyCalendar={true}
-          showWeekSeparator={true}
-          showTodayButton={true}
-          enableWeekendSelection={true}
-          minCellWidth={30}
-          showSeparatorInHeader={false}
-          enableEventOverwriting={true}
-        />
+        <Calendar year={2023} showWeekSeparators={false} firstDayOfWeek={1} forceFullWeeks={false} showDaysOfWeek={true} selectRange={false} customClasses={customCSSclasses}/>
       </div>
     </div>
   );

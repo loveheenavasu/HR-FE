@@ -225,6 +225,74 @@ p.skip-step {
   width: 100%;
   outline: none;
 }
-/* .chakra-select__wrapper.css-42b2qy {
-  width: 20%;
+/* calendar */
+
+table.calendar {
+  border-collapse: collapse;
+  border: 1px solid rgba(185, 185, 185, 0.13);
+}
+
+table.calendar thead th {
+  font-weight: normal;
+  padding: 5px;
+border: 1px solid rgba(185, 185, 185, 0.13);
+}
+
+table.calendar tbody {
+  font-size: 0.8em;
+}
+
+table.calendar td {
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(185, 185, 185, 0.13);
+  /* background-color: white; */
+  min-width: 15px;
+}
+
+
+table.calendar td.month-name {
+  font-weight: bold;
+  text-align: left;
+  cursor: default;
+}
+
+table.calendar td.prev-month,
+table.calendar td.next-month {
+  cursor: default;
+  pointer-events: none;
+  background-color: #f5f5f5;
+}
+
+/* table.calendar td.week-separator {
+  pointer-events: none;
+  padding: 0;
+  width: 8px;
+  min-width: 0;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAAXNSR0IArs4c6QAAABZJREFUCB1jYEADmzdv/o8iRA0BoIEAKngPeSAlnXcAAAAASUVORK5CYII=');
 } */
+
+table.calendar td.selected {
+  background-color: orangered;
+  font-weight: bold;
+}
+
+table.calendar td.leavesTaken {
+  background-color: #286dab;
+}
+table.calendar td.publicHoliday {
+  background-color: #f2fbb8;
+}
+
+table.calendar td.firstHalf {
+  background-color: #f2fbb8;
+  background: linear-gradient(to bottom right, #f2fbb8 50%, transparent 50%);
+}
+table.calendar td.secondHalf {
+  background-color: #f2fbb8;
+  background: linear-gradient(to top left, #f2fbb8 50%, transparent 50%);
+}
+table.calendar td.weekend {
+  background-color: #eaeaea;
+}
