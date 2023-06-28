@@ -13,7 +13,7 @@ const CompanyLinks = () => {
               src="/images/link.png"
             />
             <div className={Styles.heading}>No links available.</div>
-            <div className={Styles.text}>Why don't you add some links today?</div>
+            <div className={Styles.text}>Why don&apos;t you add some links today?</div>
             <div className={Styles.buttonWrapper}>
                 <Button colorScheme='purple'>+ Add Link</Button>
                 <Button colorScheme='purple' isDisabled={true}>Edit</Button>
