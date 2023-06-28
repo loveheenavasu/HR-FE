@@ -3,7 +3,7 @@
     background: white;
     border: 1px solid lightgray;
     padding: 20px;
-    height: 275px;
+    min-height: 275px;
     border-radius: 7px;
     margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

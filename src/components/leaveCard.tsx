@@ -1,10 +1,20 @@
-import React from "react";
+import React,{ ReactElement } from "react";
 import Styles from "../styles/leaveCard.module.css";
 
-const LeaveCard = (props: any) => {
+
+interface LeaveCardProps {
+  heading: string;
+  text?: string;
+  children?: ReactElement;
+}
+
+const LeaveCard = ({ heading,text, children }: LeaveCardProps) => {
+  
   return (
     <div className={Styles.leaveCard}>
-      <h3>{props.heading}</h3>
+      <h3>{heading}</h3>
+      <p>{text}</p>
+      <div>{children}</div>
     </div>
   );
 };

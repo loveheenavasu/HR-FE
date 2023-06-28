@@ -1,10 +1,12 @@
 a.sidebarLinks {
     display: block;
     width: 100%;
-    margin: 10px 0px;
+    margin: 5px 0px;
     padding: 16px 4px;
-    /* background: green; */
     transition: 0.5s;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #f0f4f4;
 }
 a.layout_sidebarLinks__6RFNc:hover {
     background: #98c94e;
